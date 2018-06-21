@@ -1,0 +1,59 @@
+
+<!-- header -->
+<header class="header-cover">
+  <a href="http://dashingdemo.herokuapp.com/sample" target="_blank" class="header-side-btn header-side-btn--left">
+    <i class="fa fa-desktop fa-3x"></i><br><small>Demo</small>
+  </a>
+  <a href="https://github.com/Smashing/smashing" target="_blank" class="header-side-btn header-side-btn--right">
+    <i class="fa fa-github-alt fa-3x"></i><br><small>GitHub</small>
+  </a>
+
+  <div class="container">
+
+    <nav id="navigation" class="navbar">
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+          <a class="navbar-brand js-smoothscroll" data-bypass="true" href="{{ site.url }}">
+            <img src="{{ '/assets/images/smashing-logo-sm-negative.png' | prepend: site.url }}" alt="Libre" height="" />
+          </a>
+        </div>
+
+        <!-- navbar links -->
+        {% include nav.html %}
+
+      </div>
+    </nav>
+
+
+    <div class="col-md-offset-2 col-md-8 header-intro">
+      <div class="header-intro--text">
+        <h1>
+          <img src="{{ '/assets/images/smashing-home-text.svg' | prepend: site.url }}" alt="Smashing" width="100%"
+                                                                   />
+          <small>Sinatra based framework that lets you<br> build excellent dashboards</small>
+        </h1>
+      </div>
+      <div class="header-intro--btn">
+        <a href="#getting-started" data-bypess="true" class="btn btn-action btn-xl"> Installation</a>
+        <a href="#support" data-bypess="true" class="btn btn-action btn-xl"> Documentation</a>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- monitor image -->
+<div class="monitor-container hidden-xs">
+  <img src="{{ '/assets/images/monitor.svg' | prepend: site.url }}" />
+</div>
+
+
+

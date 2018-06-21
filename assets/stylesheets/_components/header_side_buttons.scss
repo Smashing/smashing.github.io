@@ -1,0 +1,33 @@
+
+.header-side-btn {
+  display: inline-block;
+  background-color: $white;
+  height: 100px;
+  width: 100px;
+  padding: 20px;
+  margin-top: 300px;
+  position: absolute;
+  text-align: center;
+
+  small {
+    font-weight: 600;
+  }
+
+  &--right {
+    right: 0;
+    left: auto;
+    border-radius: 4px 0px 0px 4px;
+  }
+
+  &--left {
+    right: auto;
+    left: 0;
+    border-radius: 0px 4px 4px 0px;
+  }
+
+  &:hover {
+    color: $purple_normal;
+    transition: .5s;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,43 @@
+title: 'Smashing, the spiritual successor to Dashing'
+email: 'devs@smashing.com'
+description: >
+  Smashing, the spiritual successor to Dashing, is a Sinatra based framework
+  that lets you build excellent dashboards. It looks especially great on TVs.
+baseurl: '/smashing.github.io'
+url: 'https://dvinciguerra.github.io/smashing.github.io'
+twitter_username: dvinciguerra
+github_username: dvinciguerra
+markdown: kramdown
+plugins:
+  - jekyll-coffeescript
+
+######################################################################################################################
+#                                           DO NOT EDIT SETTINGS BELOW !!!                                           #
+######################################################################################################################
+
+lsi: false
+safe: true
+incremental: false
+source: "."
+markdown_ext: "markdown"
+
+sass:
+  compress: true
+  sass_dir: 'assets/stylesheets'
+
+gist:
+  noscript: false
+
+markdown: kramdown
+kramdown:
+  auto_ids: true
+  input: GFM
+  hard_wrap: false
+  math_engine: mathjax
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - feed.xml
+  - vendor/bundle

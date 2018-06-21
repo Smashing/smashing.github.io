@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="robots" content="noindex">
+
+  <title>Smashing Dashboard</title>
+  <base src="http://bivee.com.br/client/smashing/">
+
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <style>
+    /* helper styles */
+
+    .debug {
+      border: solid 1px red !important;
+    }
+    /* html|body customizations */
+
+    html,
+    body {
+      height: 100%;
+      color: #555;
+      background-color: #f9f9f9;
+    }
+    /* navbar customization */
+
+    .affix-top {
+      background-color: transparent !important;
+      border-color: transparent !important;
+      padding: 30px 0px;
+    }
+
+    .navbar-default a {
+      color: #fff !important;
+      border-bottom: solid 2px transparent;
+    }
+
+    .navbar-default a:hover {
+      color: #fff !important;
+      border-bottom: solid 2px #fff;
+    }
+    /* header customization */
+
+    header {
+      background-image: url(./images/header-background.png);
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;
+      background-color: #444;
+      text-align: center;
+      color: #fff;
+      height: 100%;
+      margin-bottom: 100px;
+    }
+
+    .header-image {
+      margin-top: 250px;
+    }
+
+    .header-buttons .btn {
+      margin-top: 50px;
+    }
+
+    .header-buttons .btn:hover {
+      color: #bf4eff;
+      border-color: #bf4eff;
+      transition: 0.8s;
+    }
+
+    .header-dashboard {
+      margin-top: 50px;
+    }
+    /* section common customization */
+
+    section {
+      padding: 100px 0px;
+    }
+
+    .section-title {
+      color: #8a84df;
+      font-size: 62px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 500px;
+    }
+
+    .section-buttons {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    section#getting-started {
+      background-color: #e6e6e6;
+    }
+
+    section#getting-started::before {
+      content: '';
+      height: 100px;
+      width: 100px;
+      display: inline-block;
+      position: absolute;
+      transform: rotate(45deg);
+      left: calc(50% - 50px);
+      right: calc(50% - 50px);
+      margin-top: -150px;
+      background-color: #f9f9f9;
+    }
+    /* footer customizations */
+
+    footer {
+      color: #555;
+      background-color: #e6e6e6;
+      padding: 100px 0px;
+    }
+
+    footer .footer-menu a {
+      color: #555;
+    }
+
+    footer .footer-menu a:hover {
+      color: #222;
+    }
+
+    footer .footer-links {
+      margin: 20px 0px;
+    }
+
+    footer .footer-links a {
+      margin: 0px 20px;
+    }
+    /* components properties */
+    /* for buttons */
+
+    .btn {
+      border-radius: 0px !important;
+    }
+
+    .btn-bluesky {
+      color: #ffffff;
+      background-color: #3dbdd9;
+    }
+
+    .btn-bordered {
+      border: solid 1.5px #fff;
+      background-color: transparent;
+      color: #fff;
+    }
+    /* introduction icons */
+
+    .intro-icon {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .intro-icon--image {
+      min-height: 100px;
+      display: inline-block;
+      line-height: 100px;
+    }
+
+    .intro-icon--text {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- header banner -->
+  <header>
+    <div class="container">
+      <nav class="navbar navbar-default navbar-custom">
+        <div class="container">
+
+          <!-- brand -->
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+              <img src="./images/smashing-logo-sm-negative.png" alt="Smashing" title="Smashing - Home Page">
+            </a>
+          </div>
+
+          <!-- menu -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="hidden active">
+                <a href="#page-top"></a>
+              </li>
+              <li>
+                <a class="page-scroll" href="#services">Introduction</a>
+              </li>
+              <li>
+                <a class="page-scroll" href="#portfolio">Getting Started</a>
+              </li>
+              <li>
+                <a class="page-scroll" href="#about">Additional Widgets</a>
+              </li>
+              <li>
+                <a class="page-scroll" href="#team">Support</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+
+
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6 col-sm-12">
+          <p class="header-image">
+            <img src="./images/smashing-logo.png" alt="Smashing" width="100%">
+          </p>
+          <div class="header-buttons">
+            <div class="col-md-6 col-sm-12">
+              <a class="btn btn-default btn-lg btn-block btn-bordered" href="">Install</a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <a class="btn btn-default btn-lg btn-block btn-bordered" href="">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-dashboard">
+        <img src="./images/smashing-dash.png" class="hidden-md hidden-lg" width="100%">
+        <img src="./images/smashing-dash.png" class="hidden-sm hidden-xs">
+      </div>
+    </div>
+  </header>
+
+
+  <!-- introduction section -->
+  <section id="intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="section-title">Introduction</h1>
+          <p class="section-subtitle">
+            Smashing is a Sinatra based framework that lets you build beautiful dashboards.
+          </p>
+        </div>
+
+        <div class="intro-icon col-md-4">
+          <p class="intro-icon--image">
+            <img src="./images/icons/icon-01.png" alt="">
+          </p>
+          <p class="intro-icon--text">
+            Use premade or create your own widgets
+          </p>
+        </div>
+
+        <div class="intro-icon col-md-4">
+          <p class="intro-icon--image">
+            <img src="./images/icons/icon-02.png" alt="">
+          </p>
+          <p class="intro-icon--text">
+            Use premade or create your own widgets
+          </p>
+        </div>
+
+        <div class="intro-icon col-md-4">
+          <p class="intro-icon--image">
+            <img src="./images/icons/icon-03.png" alt="">
+          </p>
+          <p class="intro-icon--text">
+            Use premade or create your own widgets
+          </p>
+        </div>
+
+        <div class="intro-icon col-md-4">
+          <p class="intro-icon--image">
+            <img src="./images/icons/icon-04.png" alt="">
+          </p>
+          <p class="intro-icon--text">
+            Use premade or create your own widgets
+          </p>
+        </div>
+
+        <div class="intro-icon col-md-4">
+          <p class="intro-icon--image">
+            <img src="./images/icons/icon-05.png" alt="">
+          </p>
+          <p class="intro-icon--text">
+            Use premade or create your own widgets
+          </p>
+        </div>
+
+        <div class="intro-icon col-md-4">
+          <p class="intro-icon--image">
+            <img src="./images/icons/icon-06.png" alt="">
+          </p>
+          <p class="intro-icon--text">
+            Use premade or create your own widgets
+          </p>
+        </div>
+
+        <div class="section-buttons col-md-offset-3 col-md-6">
+          <p class="text-center">
+            <a class="btn btn-bluesky btn-lg btn-block" href="#">See complete documentation</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- getting started section -->
+  <section id="getting-started">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="section-title">Getting Started</h1>
+        </div>
+
+        <div class="gstarted-item col-md-offset-1 col-md-5">
+          <h3 class="gstarted-item--title">
+            1. Lorem ipsum dolor sit amet
+          </h3>
+          <p class="gstarted-item--text">
+            Use premade or create your own widgets
+          </p>
+          <p class="gstarted-item--command">
+            $ gem install smashing
+          </p>
+        </div>
+        <div class="gstarted-item col-md-5">
+          <h3 class="gstarted-item--title">
+            1. Lorem ipsum dolor sit amet
+          </h3>
+          <p class="gstarted-item--text">
+            Use premade or create your own widgets
+          </p>
+          <p class="gstarted-item--command">
+            $ gem install smashing
+          </p>
+        </div>
+
+
+        <div class="gstarted-item col-md-offset-1 col-md-5">
+          <h3 class="gstarted-item--title">
+            1. Lorem ipsum dolor sit amet
+          </h3>
+          <p class="gstarted-item--text">
+            Use premade or create your own widgets
+          </p>
+          <p class="gstarted-item--command">
+            $ gem install smashing
+          </p>
+        </div>
+
+        <div class="gstarted-item col-md-5">
+          <h3 class="gstarted-item--title">
+            1. Lorem ipsum dolor sit amet
+          </h3>
+          <p class="gstarted-item--text">
+            Use premade or create your own widgets
+          </p>
+          <p class="gstarted-item--command">
+            $ gem install smashing
+          </p>
+        </div>
+
+        <div class="section-buttons col-md-offset-3 col-md-6">
+          <p class="text-center">
+            <a class="btn btn-bluesky btn-lg btn-block" href="#">See complete documentation</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- footer section -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <img src="./images/smashing-logo-sm-positive.png" alt="Smashing">
+        </div>
+        <div class="footer-menu col-md-offset-2 col-md-8 text-center">
+          <br>
+          <ul class="nav nav-pills nav-justified">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#introduction">Introduction</a></li>
+            <li><a href="/#getting-started">Getting Started</a></li>
+            <li><a href="/#additional-widgets">Additional Widgets</a></li>
+            <li><a href="/#support">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-links container-fluid">
+      <div class="row">
+        <p class="text-spaced">
+          <a href="#" class="pull-right">
+            <i class="fa fa-twitter-square fa-3x"></i>
+          </a>
+          <a href="#" class="pull-right">
+            <i class="fa fa-github-square fa-3x"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      alert 'Done'
+    });
+
+  </script>
+</body>
+
+</html>
+

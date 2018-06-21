@@ -1,0 +1,44 @@
+
+.header-intro {
+  &--text {
+    margin-top: calc(600px/2 - 200px);
+    text-align: center;
+
+    h1 {
+      text-align: right;
+      color: $fg_negative;
+      font-size: 120px;
+      line-height: 5px;
+    }
+
+    small {
+      color: $fg_negative;
+      font-size: 28px;
+      line-height: 5px;
+    }
+  }
+
+  &--btn {
+    text-align: center;
+    margin-top: 50px;
+
+    a {
+      color: $fg_negative;
+      background-color: $purple_lighten;
+      border: solid 3px $fg_negative;
+      border-radius: 0px;
+      min-width: 200px;
+      margin: 10px 10px;
+      font-size: 20px;
+      padding: 5px 20px;
+
+      &:hover {
+        color: $fg_negative;
+        background-color: $purple_normal;
+        border: solid 3px $fg_negative;
+        transition: .5s;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,43 @@
+---
+---
+// global variables
+$site_url: '{{ site.url }}';
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700');
+
+// abstracts
+@import '_abstract/variables';
+
+// themes
+@import '_themes/default';
+
+
+// components
+@import '_components/header_cover';
+@import '_components/header_intro';
+@import '_components/header_side_buttons';
+@import '_components/monitor_image_container';
+
+@import '_components/section_introduction';
+@import '_components/section_getting_started';
+@import '_components/section_widgets';
+@import '_components/section_support';
+@import '_components/footer';
+
+.debug {
+  border: solid 1px red;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: $gray_darken;
+}
+
+p {
+  line-height: 40px;
+}
+
