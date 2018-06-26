@@ -1,0 +1,29 @@
+
+
+section {
+  padding: 200px 0px 150px !important;
+}
+
+.section-title {
+  font-size: 62px;
+  color: $purple_lighten;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  margin: 20px 0px 50px;
+}
+
+
+.btn {
+  border-color: transparent;
+  border-radius: 2px !important;
+
+  &:hover {
+    transition: .5s
+  }
+}
+
+.btn-primary {
+  background-color: #3dbdd9
+}

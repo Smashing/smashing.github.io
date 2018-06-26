@@ -1,0 +1,29 @@
+.section-additional-widgets {
+  text-align: center;
+}
+
+.widget-panel {
+  text-align: left;
+  padding: 0px 20px;
+  min-height: 125px;
+  border-radius: 5px;
+  border: solid 1px $purple_lighten;
+  margin-bottom: 50px;
+  box-shadow: 0px 2px 10px rgba(70, 70, 70, 0.4);
+
+  &:hover {
+    transition: 0.5s;
+    box-shadow: 0px 2px 10px rgba(70, 70, 70, 0.9);
+  }
+
+  .widget-title {
+    color: $purple_lighten;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .widget-description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

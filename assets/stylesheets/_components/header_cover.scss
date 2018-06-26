@@ -1,0 +1,32 @@
+
+.header-cover {
+  color: $fg_negative;
+  background-image: url($site_url + '/assets/images/header-background.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+  min-height: 600px;
+  max-height: 1024px;
+  height: 100%;
+
+  nav {
+    margin-top: 30px;
+    padding: 0px;
+  }
+
+  .nav a {
+    color: $fg_negative;
+    font-size: 20px;
+    border-bottom: solid 3px transparent;
+
+    &:hover {
+      transition: .5s;
+      background-color: transparent;
+      border-bottom: solid 3px $white;
+    }
+  }
+}
+
+
